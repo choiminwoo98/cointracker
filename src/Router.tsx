@@ -8,7 +8,7 @@ interface IRouterProps {
 }
 function Router({ toggleDark, isDark }: IRouterProps) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Nav toggleDark={toggleDark} isDark={isDark} />
       <Routes>
         <Route path="/:coinId/*" element={<Coin isDark={isDark} />} />
